@@ -1,11 +1,12 @@
 import User from "../models/user.js"
 
-// Get all users
+// Get all users from the Database
 const handleGetReq = async (req, res) => {
     const db_users = await User.find({});
     return res.json(db_users);
 }
 
+// Post data to the Database
 const handlePostReq = async (req, res) => {
     const body = await req.body;
 
