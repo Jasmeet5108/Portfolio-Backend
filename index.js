@@ -11,6 +11,10 @@ connectToMongo(process.env.MONGODB_URI).then(() => { console.log(`MongoDb connec
 const app = express();
 const port = 9000;
 
+app.get("/", (req, res) => {
+    res.send("Hey!!! Your backend is working fine")
+})
+
 app.use(express.json());
 app.use(cors());
 app.use("/form", userRouter);
