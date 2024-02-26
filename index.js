@@ -3,7 +3,10 @@ import cors from "cors";
 import userRouter from "./routes/user.js";
 import connectToMongo from "./connect/user.js";
 
-connectToMongo("mongodb://localhost:27017/portfolio-form").then(() => { console.log(`MongoDb connected`) });
+import dotenv from 'dotenv';
+dotenv.config();
+
+connectToMongo(process.env.MONGODB_URI).then(() => { console.log(`MongoDb connected`) });
 
 const app = express();
 const port = 9000;
