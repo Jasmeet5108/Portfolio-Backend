@@ -9,7 +9,7 @@ dotenv.config();
 connectToMongo(process.env.MONGODB_URI).then(() => { console.log(`MongoDb connected`) });
 
 const app = express();
-const port = 9000;
+const port = process.env.PORT || 9000;
 
 app.get("/", (req, res) => {
     res.send("Hey!!! Your backend is working fine")
