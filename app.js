@@ -1,10 +1,10 @@
+import dotenv from 'dotenv';
+dotenv.config();
 import express from "express";
 import cors from "cors";
 import userRouter from "./routes/user.js";
 import connectToMongo from "./connect/user.js";
 
-import dotenv from 'dotenv';
-dotenv.config();
 
 connectToMongo(process.env.MONGODB_URI).then(() => { console.log(`MongoDb connected`) });
 
